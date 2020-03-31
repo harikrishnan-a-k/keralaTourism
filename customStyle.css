@@ -1,0 +1,90 @@
+:root{
+    --mainBlue:rgba(0, 57, 115, 1);
+}
+
+body{
+    background-image: linear-gradient(70deg,rgb(16, 222, 236) 20%,rgb(18, 248, 179) 55%,rgb(243, 220, 11));
+    
+}
+.container.paddingcorrection{
+    padding:0px 0px;
+}
+#mainnavbar a{
+    color: white;
+}
+#mainnavbar a:hover{
+    color: rgb(14, 204, 14);
+}
+.marginTop{
+    margin-top: 120px;
+}
+
+#mainnavbar{
+    background-color:var(--mainBlue);
+    transition: background-color 1000ms;
+
+}
+#mainnavbar.scrolled{
+    background-color: rgba(139, 0, 139, 0.808);
+    transition: background-color 1000ms;
+}
+/* .logo{
+    width: 200px;
+} */
+@media(max-width:1000px){
+    .logo img{
+        width:200px;
+    }
+}
+.carousel-item img{
+    height:400px;
+}
+
+@media(max-width:576px){
+    .carousel-item img{
+        height:300px;
+    }
+
+}
+
+.footer{
+    position: absolute;
+    bottom: 0px;
+    height:60px ;
+    background-color: var(--mainBlue);
+    color: white;
+    width: 100%;
+    overflow: hidden;
+}
+.footer p{
+    text-align: center;
+    padding-top: 20px;
+    
+}
+
+.minHeight{
+    min-height: calc(100vh - 114px);
+}
+html{
+    position:relative;
+}
+
+#particles-js{
+    position: absolute;
+    top:0;
+    height: 100%;
+    width:100%;
+    z-index:0;
+}
+
+.mainheading{
+    /* font-size: 42px; */
+    
+background: linear-gradient(90deg, rgba(205,8,161,1) 36%, rgba(5,24,222,1) 68%, rgba(0,212,255,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+ 

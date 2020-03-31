@@ -1,0 +1,43 @@
+.mainheading{
+    /* font-size: 42px; */
+    
+background: linear-gradient(90deg, rgba(205,8,161,1) 36%, rgba(5,24,222,1) 68%, rgba(0,212,255,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+
+  }
+
+  .swiper-slide .imgBox img{
+      height: 240px;
+      width: 100%;
+  }
+
+  @media(max-width:576px){
+    .swiper-slide {
+        width:150px;
+        height: 150px;
+    }
+
+    .swiper-slide .imgBox img{
+    
+        height:100px;
+    }
+  }
+  .details a{
+      text-decoration: none;
+      cursor: pointer;
+  }
