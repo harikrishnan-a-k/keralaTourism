@@ -38,42 +38,50 @@
     <div class="container marginTop minHeight mb-5" >
         <div class="row justify-content-center">
             <div class="col-md-4 col-8 " style="z-index: 100;">
-                <form action="" class="signup-form p-4 p-md-5 mt-5 ">
+                <form action="" class="signup-form p-4 p-md-5 mt-5 " id="singnUpForm">
                     <h1 class="formhead mb-4 text-center">Sign Up</h1>
                     <div class="textb">
-                        <input type="text" name="fname" id="fname">
-                        <span data-placeholder="First name"></span>
+                        <input type="text" name="fname" id="fname" required>
+                        <span data-placeholder="First name *"></span>
                     </div>
                     <div class="textb">
                         <input type="text" name="lname" id="lname">
                         <span data-placeholder="Lastname"></span>
                     </div>
                     <div class="textb">
-                        <input type="email" name="email" id="email">
-                        <span data-placeholder="Email"></span>
+                        <div class="errorMsg hidden" id="emailError"></div>
+                        <input type="text" name="email" id="email" required>
+                        <span data-placeholder="Email *"></span>
                     </div>
                     <div class="textb">
-                        <input type="number" name="mobile" id="mobile">
-                        <span data-placeholder="Mobile"></span>
+                        <div class="errorMsg hidden" id="mobileError"></div>
+                        <input type="text" name="mobile" id="mobile" required>
+                        <span data-placeholder="Mobile *"></span>
                     </div>
                     <div class="textb">
                         <input type="date" name="dob" id="dob">
                         <span data-placeholder="DOB"></span>
                     </div>
                     <div class="textb">
-                        <input type="text" name="username" id="username">
-                        <span data-placeholder="Username"></span>
+                        <input type="text" name="username" id="username" required>
+                        <span data-placeholder="Username *"></span>
                     </div>
                     <div class="textb">
-                        <input type="password" name="password" id="password">
-                        <span data-placeholder="Password"></span>
+                        <div class="errorMsg hidden" id="passwordError"></div>
+                        <input type="password" name="password" id="password" required>
+                        
+                        <span data-placeholder="Password *"></span>
+                        <i toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password"></i>
+                        
                     </div>
+                    <div id="passLenthIndicator" class="text-center hidden"> short</div>
                     <div class="textb">
-                        <input type="password" name="rpassword" id="rpassword">
-                        <span data-placeholder="Repeat Password"></span>
+                        <div class="errorMsg hidden" id="rpasswordError"></div>
+                        <input type="password" name="rpassword" id="rpassword" required>
+                        <span data-placeholder="Repeat Password *"></span>
                     </div>
 
-                    <input type="submit" value="Sign Up" class="logbtn">
+                    <input type="submit" value="Sign Up" class="logbtn" id="signUpBtn">
                     <div class="bottom-text">
                         Created Account ? Goto <a href="login.html">Login</a>
                     </div>
@@ -115,5 +123,6 @@
     <script src="app.js"></script>
 
     <script src="pageanimation.js"></script>
+    <script src="SignUpFormValidation.js"></script>
 </body>
 </html>

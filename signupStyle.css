@@ -1,8 +1,63 @@
 .signup-form{
     width:100%;
     background-color: #f1f1f1;
-    height: 130vh;
+    height: 140vh;
     border-radius: 10px;
     margin-bottom: 100px;
     
 }
+
+.errorMsg{
+    position: absolute;
+    top:-50%;
+    left:2%;
+    width:90%;
+    padding: 0.5% 5%;
+    background-color: rgb(139, 0, 139);
+    color: white;
+    border-radius: 5px;
+    z-index: 2000;
+}
+.errorMsg::before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid rgb(139, 0, 139);
+    position: absolute;
+    bottom:-41%;
+    left:10%;
+    z-index: 2000;
+}
+.errorMsg.hidden{
+    display: none;
+}
+/* .errorMsg::before.hidden{
+    display: none;
+} */
+
+#passLenthIndicator{
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    font-size: 10px;
+    padding:0;
+    margin-top: -6%;
+    margin-bottom: 16%;
+    max-width: 100%;
+
+    
+}
+#passLenthIndicator.hidden{
+    display: none;
+}
+
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: 8px;
+    position: relative;
+    
+    z-index: 2;
+  }
