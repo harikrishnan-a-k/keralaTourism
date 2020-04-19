@@ -41,31 +41,41 @@ const inputValidate=function(input,err,regExp){
         
     }
 };
-email.addEventListener('input',()=>{
-    inputValidate(email,emailError,emailRegExp);
-});
-mobile.addEventListener('input',()=>{
-    inputValidate(mobile,mobileError,mobileRegExp);
-});
-password.addEventListener('input',()=>{
-    inputValidate(password,passwordError,passRegExp);
-});
+if(email){
+    email.addEventListener('input',()=>{
+        inputValidate(email,emailError,emailRegExp);
+    });
+}
+if(mobile){
+    mobile.addEventListener('input',()=>{
+        inputValidate(mobile,mobileError,mobileRegExp);
+    });
+}
 
-rpassword.addEventListener('input',()=>{
-    if(rpassword.value===password.value){
-        errorFlags.rpasswordErrFlag=false;
-        const msg='';
-        rpasswordError.innerHTML=msg;
-        rpasswordError.classList.add('hidden');
-        
-    }
-    else{
-        errorFlags.rpasswordErrFlag=true;
-        const msg='Password Mismatch';
-        rpasswordError.innerHTML=msg;
-        rpasswordError.classList.remove('hidden');
-    }
-});
+if(password){
+    password.addEventListener('input',()=>{
+        inputValidate(password,passwordError,passRegExp);
+    });
+}
+
+if(rpassword){
+    rpassword.addEventListener('input',()=>{
+        if(rpassword.value===password.value){
+            errorFlags.rpasswordErrFlag=false;
+            const msg='';
+            rpasswordError.innerHTML=msg;
+            rpasswordError.classList.add('hidden');
+            
+        }
+        else{
+            errorFlags.rpasswordErrFlag=true;
+            const msg='Password Mismatch';
+            rpasswordError.innerHTML=msg;
+            rpasswordError.classList.remove('hidden');
+        }
+    });
+}
+
 // for showing the password strength on each  change on password
 const indicatepassLength=()=>{
     if(password.value.length<8){
@@ -85,7 +95,10 @@ const indicatepassLength=()=>{
     passLengthIndicator.classList.remove('hidden');
 };
 // adding  the indicatepassLength as event call back for password input on 'input' event.
-password.addEventListener('input',indicatepassLength);
+if(rpassword){
+    password.addEventListener('input',indicatepassLength);
+}
+
 
 // validate function prevent form from submiting if any of the flags is true
 function validate(e){
@@ -99,7 +112,24 @@ function validate(e){
         
     }
 }
-signUpBtn.addEventListener('click',validate);
+
+if(signUpBtn){
+    signUpBtn.addEventListener('click',validate);
+}
+
+
+
+const loginBtn =get('#loginBtn');
+// preventing login from submisssion on password error
+if(loginBtn){
+    loginBtn.addEventListener('click',function(e){
+        if(errorFlags[password]===true){
+            e.preventDefault();
+            return;
+        }
+    });
+}
+
 
 
 // this is jquery for show/hide password.

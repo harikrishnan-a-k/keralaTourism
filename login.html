@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="customStyle.css">
     <link rel="stylesheet" href="loginStyle.css">
+    <link rel="stylesheet" href="signupStyle.css">
     <title>Kerala Tourism</title>
 </head>
 <body>
@@ -41,14 +42,16 @@
                     <h1 class="formhead mb-4 text-center">Login</h1>
                     <div class="textb">
                         <input type="text" name="username" id="username" required >
-                        <span data-placeholder="Username"></span>
+                        <span data-placeholder="Username *"></span>
                     </div>
                     <div class="textb">
+                        <div class="errorMsg hidden" id="passwordError"></div>
                         <input type="password" name="password" id="password" required >
-                        <span data-placeholder="Password"></span>
+                        <span data-placeholder="Password *"></span>
+                        <i toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password"></i>
                     </div>
 
-                    <input type="submit" value="Login" class="logbtn">
+                    <input type="submit" value="Login" class="logbtn" id="loginBtn">
                     <div class="bottom-text">
                         Dont have an account ? <a href="signup.html">Sign Up</a>
                     </div>
@@ -90,5 +93,6 @@
     <script src="app.js"></script>
 
     <script src="pageanimation.js"></script>
+    <script src="SignUpFormValidation.js"></script>
 </body>
 </html>
